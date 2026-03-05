@@ -1413,7 +1413,7 @@ class PDFStudioApp(BaseApp):
         small_font = ctk.CTkFont(size=12)
         section_font = ctk.CTkFont(size=13, weight="bold")
 
-        pad = {"padx": 20, "sticky": "w"}
+        pad = {"padx": 20, "anchor": "w"}
 
         ctk.CTkLabel(win, text="PDF Studio Pro", font=title_font,
                      text_color="#f4f7ff").pack(pady=(20, 2), **pad)
