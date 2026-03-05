@@ -188,10 +188,12 @@ Más estable para apps con GUI y dependencias nativas.
 
 ```bash
 pyinstaller --noconfirm --clean --windowed --name PDFStudioPro ^
+  --icon "assets\app.ico" ^
   --collect-all customtkinter ^
   --collect-all pymupdf ^
   --collect-all PIL ^
   --collect-all tkinterdnd2 ^
+  --collect-all rapidocr_onnxruntime ^
   --hidden-import=tkinterdnd2 ^
   --add-data "assets;assets" ^
   --add-data "editor_tab.py;." ^
@@ -210,10 +212,12 @@ Más fácil de compartir, pero puede iniciar más lento.
 
 ```bash
 pyinstaller --noconfirm --clean --onefile --windowed --name PDFStudioPro ^
+  --icon "assets\app.ico" ^
   --collect-all customtkinter ^
   --collect-all pymupdf ^
   --collect-all PIL ^
   --collect-all tkinterdnd2 ^
+  --collect-all rapidocr_onnxruntime ^
   --hidden-import=tkinterdnd2 ^
   --add-data "assets;assets" ^
   --add-data "editor_tab.py;." ^
@@ -224,24 +228,8 @@ Salida:
 
 * `dist\PDFStudioPro.exe`
 
----
+> **Importante**: `--collect-all rapidocr_onnxruntime` es necesario para que OCR funcione en el ejecutable (incluye `config.yaml` y los modelos ONNX).
 
-## Icono del ejecutable (opcional)
-
-Si tienes `assets/app.ico`, puedes incluirlo al compilar:
-
-```bash
-pyinstaller --noconfirm --clean --windowed --name PDFStudioPro ^
-  --icon "assets\app.ico" ^
-  --collect-all customtkinter ^
-  --collect-all pymupdf ^
-  --collect-all PIL ^
-  --collect-all tkinterdnd2 ^
-  --hidden-import=tkinterdnd2 ^
-  --add-data "assets;assets" ^
-  --add-data "editor_tab.py;." ^
-  app_pdf_studio.py
-```
 
 ---
 
@@ -308,6 +296,7 @@ pyinstaller --noconfirm --clean --name PDFStudioPro ^
   --collect-all pymupdf ^
   --collect-all PIL ^
   --collect-all tkinterdnd2 ^
+  --collect-all rapidocr_onnxruntime ^
   --hidden-import=tkinterdnd2 ^
   --add-data "assets;assets" ^
   --add-data "editor_tab.py;." ^

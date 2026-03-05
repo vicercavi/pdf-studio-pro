@@ -192,6 +192,7 @@ pyinstaller --noconfirm --clean --windowed --name PDFStudioPro ^
   --collect-all pymupdf ^
   --collect-all PIL ^
   --collect-all tkinterdnd2 ^
+  --collect-all rapidocr_onnxruntime ^
   --hidden-import=tkinterdnd2 ^
   --add-data "assets;assets" ^
   --add-data "editor_tab.py;." ^
@@ -214,6 +215,7 @@ pyinstaller --noconfirm --clean --onefile --windowed --name PDFStudioPro ^
   --collect-all pymupdf ^
   --collect-all PIL ^
   --collect-all tkinterdnd2 ^
+  --collect-all rapidocr_onnxruntime ^
   --hidden-import=tkinterdnd2 ^
   --add-data "assets;assets" ^
   --add-data "editor_tab.py;." ^
@@ -223,6 +225,8 @@ pyinstaller --noconfirm --clean --onefile --windowed --name PDFStudioPro ^
 Output:
 
 * `dist\PDFStudioPro.exe`
+
+> **Important**: `--collect-all rapidocr_onnxruntime` is required for OCR to work in the executable (includes `config.yaml` and ONNX models).
 
 ---
 
@@ -237,6 +241,7 @@ pyinstaller --noconfirm --clean --windowed --name PDFStudioPro ^
   --collect-all pymupdf ^
   --collect-all PIL ^
   --collect-all tkinterdnd2 ^
+  --collect-all rapidocr_onnxruntime ^
   --hidden-import=tkinterdnd2 ^
   --add-data "assets;assets" ^
   --add-data "editor_tab.py;." ^
@@ -308,6 +313,7 @@ pyinstaller --noconfirm --clean --name PDFStudioPro ^
   --collect-all pymupdf ^
   --collect-all PIL ^
   --collect-all tkinterdnd2 ^
+  --collect-all rapidocr_onnxruntime ^
   --hidden-import=tkinterdnd2 ^
   --add-data "assets;assets" ^
   --add-data "editor_tab.py;." ^
